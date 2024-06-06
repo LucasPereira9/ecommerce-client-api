@@ -26,6 +26,10 @@ class ClientRepository {
     return ClientModel.findOneAndUpdate({ cpf }, clientData, { new: true });
   }
 
+  async findAll() {
+    return ClientModel.find();
+  }
+
   async findByCpf(cpf) {
     return ClientModel.findOne({ cpf });
   }
