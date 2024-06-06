@@ -12,10 +12,8 @@ mongoose.connect('mongodb://localhost/ecommerce', {
   useUnifiedTopology: true,
 });
 
-// Rotas
 app.use('/clients', clientRoutes);
 
-// Rota de teste
 app.get('/', (req, res) => {
   res.send('API de Clientes está funcionando');
 });
