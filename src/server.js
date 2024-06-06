@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/ecommerce', {
 });
 
 // Rotas
-app.use('/api/clients', clientRoutes);
+app.use('/clients', clientRoutes);
 
 // Rota de teste
 app.get('/', (req, res) => {
