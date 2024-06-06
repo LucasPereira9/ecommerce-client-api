@@ -1,7 +1,7 @@
-const { validate } = require('cpf-validator');
+const { cpf } = require('cpf-cnpj-validator');
 
-const validateCPF = (cpf) => {
-  return validate(cpf);
+const validateCPF = (cpfNumber) => {
+  return cpf.isValid(cpfNumber);
 };
 
 module.exports = validateCPF;

@@ -6,11 +6,18 @@ class CreateClientUseCase {
   async execute(data) {
     const { cpf, name, email, maritalStatus, address, phoneNumbers } = data;
 
+    const emptyData = !name || !email || !maritalStatus || !address || !phoneNumbers.length
+
     if (!validateCPF(cpf)) {
       throw new Error('CPF inválido');
     }
 
-    if (!name || !email || !maritalStatus || !address || !phoneNumbers.length) {
+    const existingClient = await clientRepository.findByCpf(cpf);
+    if (existingClient) {
+      throw new Error('Usuário já cadastrado');
+    }
+
+    if (emptyData) {
       throw new Error('Dados obrigatórios faltando');
     }
 
