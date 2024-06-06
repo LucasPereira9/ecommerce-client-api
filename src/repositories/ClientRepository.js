@@ -33,6 +33,10 @@ class ClientRepository {
   async findByCpf(cpf) {
     return ClientModel.findOne({ cpf });
   }
+  
+  async delete(cpf) {
+    return ClientModel.findOneAndDelete({ cpf });
+  }
 }
 
 module.exports = new ClientRepository();
