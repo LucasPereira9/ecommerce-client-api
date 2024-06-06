@@ -9,8 +9,8 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'API para gerenciar clientes em um sistema de ecommerce',
       contact: {
-        name: 'Seu Nome',
-        email: 'seuemail@example.com'
+        name: 'Lucas Almeida',
+        email: 'Lucas970997@gmail.com'
       }
     },
     servers: [{ url: 'http://localhost:3000', description: 'Servidor de Desenvolvimento' }],
